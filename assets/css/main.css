@@ -1,0 +1,78 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.container-inner {
+  width: 90%;
+  background-color: #1b0b64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.container h1 {
+  color: #1b0b64;
+  font-size: 50px;
+}
+
+.container h1 > span {
+  color: #1b0b64;
+}
+
+@media only screen and (max-width: 500px) {
+  .container h1 {
+    font-size: 30px;
+  }
+}
+
+.container p {
+  font-size: 30px;
+  color: #a78b8b;
+  text-transform: capitalize;
+  text-indent: 10px;
+}
+
+.container p:hover {
+  color: red;
+}
+
+.container p::before {
+  content: '';
+  position: absolute;
+}
+
+.container input {
+  width: 100%;
+  display: inline-block;
+  color: #a78b8b;
+}
+
+.container > .flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=main.css.map */

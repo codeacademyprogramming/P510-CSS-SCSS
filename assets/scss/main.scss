@@ -1,0 +1,92 @@
+$primary-color: #1b0b64;
+$secondary-color: #a78b8b;
+$tertiary-color: #3f9bd8;
+$global-width: 90%;
+
+$phone-screen-size: 500px;
+
+@mixin flexbox ($justifyContent: center, $alignItems: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        // screens less than 1320 pixel
+        @media only screen and (max-width: $phone-screen-size) {
+            @content;
+        }
+    }
+    @else if $breakpoint == tablet {
+        @media only screen and (max-width: 900px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == desktop {
+        @media only screen and (min-width: 1500px) {
+            @content;
+        }
+    }
+}
+
+.container {
+    width: $global-width;
+    margin: 0 auto;
+    height: 100vh;
+    @include flexbox(initial, flex-end);
+
+    &-inner {
+        width: $global-width;
+        background-color: $primary-color;
+
+        @include flexbox(flex-end, baseline)
+    }
+
+    h1 {
+        color: $primary-color;
+        font-size: 50px;
+
+        & > span {
+            color: $primary-color;
+        }
+
+        @include respond(phone) {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        font-size: 30px;
+        color: $secondary-color;
+        text-transform: capitalize;
+        text-indent: 10px;
+        
+        &:hover {
+            color: red;
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+        }
+    }
+
+    input {
+        width: 100%;
+        display: inline-block;
+        color: $secondary-color;
+
+        @include respond(tablet) {
+
+        }
+    }
+
+    & > .flexbox {
+        @include flexbox(center, center);
+    }
+}
+
+
